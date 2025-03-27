@@ -1,6 +1,6 @@
 <?php
  session_start();
-   $mysql = new mysqli('localhost', 'root', '', 'cm25474_fool');
+   $mysql = new mysqli('localhost', 'root', '', '****');
 //    if($mysql)
 // echo 'Соединение установлено.';
 // else
