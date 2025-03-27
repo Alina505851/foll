@@ -1,0 +1,1709 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+    background-image: url(..//img/general_background_standard.png);
+    background-size: cover;
+}
+
+
+/* строка навигации */
+nav {
+    height: 10vh;
+    background: transparent;
+    padding-top: 10px;
+    position: absolute;
+}
+
+
+/* Бургер */
+#menu__toggle {
+    opacity: 0;
+}
+
+#menu__toggle:checked~.menu__btn>span {
+    transform: rotate(45deg);
+}
+
+#menu__toggle:checked~.menu__btn>span::before {
+    top: 0;
+    transform: rotate(0);
+}
+
+#menu__toggle:checked~.menu__btn>span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu__toggle:checked~.menu__box {
+    visibility: visible;
+    left: 0;
+}
+
+.menu__btn {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 3%;
+    left: 90vw;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transition-duration: .25s;
+}
+
+.menu__btn>span::before {
+    content: '';
+    top: -8px;
+}
+
+.menu__btn>span::after {
+    content: '';
+    top: 8px;
+}
+
+/* БЛОК С ПРАВИЛАМИ */
+#rules {
+    z-index: 9997;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    width: 80vw;
+    height: 70vh;
+    font-size: 20px;
+    /* background-color: rgba(39, 2, 60); */
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    color: #fff;
+    font-family: sans-serif;
+    overflow-y: auto;
+    text-shadow: 2px 2px 10px #A05ACE;
+}
+
+#rules h1 {
+    text-shadow: 2px 2px 2px #A05ACE;
+}
+
+#rules::-webkit-scrollbar {
+    width: 10px;
+}
+
+#rules::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+#rules::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #37075f;
+}
+
+hr {
+    width: 300px;
+}
+
+#rules_text_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 10%;
+}
+
+#rules_text_p {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+#rules_text_p p {
+    line-height: 1.5em;
+}
+
+#understand_rules_button {
+    width: 150px;
+    height: 40px;
+    border: 5px solid #37075f;
+    background: rgb(59 6 86);
+    border-radius: 7px;
+    color: #fff;
+    font-size: larger;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    -webkit-box-shadow: 0px -1px 20px -5px rgb(255 255 255 / 20%);
+    -moz-box-shadow: 0px -1px 20px -5px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px -1px 20px -5px rgb(255 255 255 / 20%);
+}
+
+
+
+/* МЕНЮ ПРИ КЛИКЕ НА БУРГЕР */
+
+#menu {
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9997;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    width: 80%;
+    height: 80%;
+}
+
+
+/* верхняя часть меню */
+#menu_top {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+/* верхняя строка  row*/
+.menu_top_wrapper_one {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 5vh;
+    margin-top: 5vh;
+}
+
+.menu_top_wrapper_two {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 5vh;
+    margin-top: 5vh;
+}
+
+/* сам блок целиком */
+.menu_top_wrapper_block {
+    width: 20%;
+    height: 5vh;
+    border-radius: 7px;
+    -webkit-box-shadow: 0px -1px 20px -5px rgba(255, 255, 255, 0.2);
+    -moz-box-shadow: 0px -1px 20px -5px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px -1px 20px -5px rgba(255, 255, 255, 0.2);
+}
+
+/* заголовки всех блоков  (блок)*/
+.menu_top_wrapper_block_header {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #37075f;
+    border-radius: 7px;
+    cursor: pointer;
+    -webkit-box-shadow: 0px -1px 20px -5px rgba(255, 255, 255, 0.2);
+    -moz-box-shadow: 0px -1px 20px -5px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px -1px 20px -5px rgba(255, 255, 255, 0.2);
+}
+
+/* тело всех блоков  (блок)*/
+.menu_top_wrapper_block_body {
+    height: 0vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* заголовки всех блоков  (p)*/
+.menu_top_p {
+    color: #fff;
+    font-size: larger;
+}
+
+
+
+
+
+
+/* нижняя часть меню */
+#menu_bottom {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 7vh;
+}
+
+/* нижняя часть блоков  (row) */
+.menu_bottom_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 5vh;
+}
+
+/* самые нижние кнопки */
+.btn__bottom__bottom {
+    width: 28%;
+    height: 100%;
+    border: 1px solid #37075f;
+    border-radius: 7px;
+    color: #fff;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+    -webkit-box-shadow: 0px -1px 20px -5px rgba(255, 255, 255, 0.2);
+    -moz-box-shadow: 0px -1px 20px -5px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px -1px 20px -5px rgba(255, 255, 255, 0.2);
+}
+
+/* звук */
+#jcp-volume {
+    accent-color: #9c48e2;
+}
+
+/* профиль */
+#profile_body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.photo_setting_wrap_guest {
+    display: none;
+    /* флекс для теста */
+    align-items: center;
+    justify-content: center;
+}
+
+.photo_setting_wrap {
+    display: flex;
+    width: 100%;
+    height: 60%;
+}
+
+.photo_setting_wrap_h1 {
+    color: #fff;
+}
+
+.photo_setting_wrap_h1 a {
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+.photo_setting_wrap:nth-child(2) {
+    align-items: center;
+    padding: 5%;
+    height: 40%;
+
+}
+
+.photo_setting_wrap:nth-child(3) {
+    padding: 5%;
+    height: 30%;
+}
+
+#login_change {
+    border-radius: 5px;
+    width: 200px;
+    background: rgba(255, 255, 255, 0.192);
+    border: 2px solid #6743ee;
+    /* border: 2px solid #37075f; */
+    color: white;
+    height: 25px;
+    margin-top: 10px;
+}
+
+#login_change::-webkit-input-placeholder {
+    text-align: center;
+}
+
+.profile_h {
+    color: white;
+}
+
+.btn_profile {
+    background: rgba(255, 255, 255, 0.192);
+    color: white;
+    border-color: #6743ee;
+    border-radius: 5px;
+    width: 180px;
+    height: 25px;
+    margin-left: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    /* border: 2px solid #37075f; */
+}
+
+.player_photo_setting {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#player_photo_setting_img {
+    width: 90px;
+    height: 90px;
+    background-color: #9F9F9F;
+    background-image: url(..//img/ava_standart.png);
+    background-size: cover;
+}
+
+
+#player_photo_setting_form_pic {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#col {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#input__photo_setting {
+    border-radius: 5px;
+    padding-left: 9px;
+}
+
+input[type='file'] {
+    color: transparent;
+}
+
+#button__photo_setting {
+    margin: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: transparent;
+    border: 4px solid #37075f;
+    cursor: pointer;
+}
+
+.logout {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+
+}
+
+
+
+
+
+
+/* фон */
+.background_body_line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#background_body {
+    overflow-y: auto;
+}
+
+
+#background_one {
+    background-image: url(..//img/general_background_standard.png);
+}
+
+#background_two {
+    background-image: url(..//img/general_background_2.png);
+}
+
+#background_three {
+    background-image: url(..//img/general_background_3.png);
+}
+
+#background_four {
+    background-image: url(..//img/general_background_4.png);
+}
+
+#background_five {
+    background-image: url(..//img/general_background_5.png);
+}
+
+#background_six {
+    background-image: url(..//img/general_background_6.png);
+}
+
+#background_seven {
+    background-image: url(..//img/general_background_7.png);
+}
+
+#background_eight {
+    background-image: url(..//img/general_background_8.png);
+}
+
+#background_nine {
+    background-image: url(..//img/general_background_9.png);
+}
+
+#background_ten {
+    background-image: url(..//img/general_background_10.png);
+}
+
+#background_eleven {
+    background-image: url(..//img/general_background_11.png);
+}
+
+#background_twelve {
+    background-image: url(..//img/general_background_12.png);
+}
+
+
+
+
+/* рубашка карт */
+#shirt_body {
+    overflow-y: auto;
+}
+
+/* сортировка */
+#sorting_body {
+    overflow-y: auto;
+}
+
+/* дизайн стола */
+#design_body {
+    overflow-y: auto;
+}
+
+#face_body {
+    overflow-y: auto;
+}
+
+/* дизайн полоски прокрутки */
+#design_body::-webkit-scrollbar {
+    width: 10px;
+}
+
+#design_body::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+#design_body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #37075f;
+}
+
+#background_body::-webkit-scrollbar {
+    width: 10px;
+}
+
+#background_body::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+#background_body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #37075f;
+}
+
+#shirt_body::-webkit-scrollbar {
+    width: 10px;
+}
+
+#shirt_body::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+#shirt_body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #37075f;
+}
+
+#sorting_body::-webkit-scrollbar {
+    width: 10px;
+}
+
+#sorting_body::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+#sorting_body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #37075f;
+}
+
+#face_body::-webkit-scrollbar {
+    width: 10px;
+}
+
+#face_body::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+#face_body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #37075f;
+}
+
+#profile_body::-webkit-scrollbar {
+    width: 10px;
+}
+
+#profile_body::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+#profile_body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #37075f;
+}
+
+#achievements_body::-webkit-scrollbar {
+    width: 10px;
+}
+
+#achievements_body::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+#achievements_body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #37075f;
+}
+
+
+.design_body_line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.block_mini {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    background-size: cover;
+}
+
+#design_one {
+    background-image: url(..//img/table_standard.png);
+}
+
+#design_two {
+    background-image: url(..//img/table_2.png);
+}
+
+#design_three {
+    background-image: url(..//img/table_3.png);
+}
+
+#design_four {
+    background-image: url(..//img/table_4.png);
+}
+
+#design_five {
+    background-image: url(..//img/table_5.png);
+}
+
+#design_six {
+    background-image: url(..//img/table_6.png);
+}
+
+#design_seven {
+    background-image: url(..//img/table_7.png);
+}
+
+#design_eight {
+    background-image: url(..//img/table_8.png);
+}
+
+#design_nine {
+    background-image: url(..//img/table_9.png);
+}
+
+#achievements_body {
+    background-color: #9F9F9F;
+    overflow-y: auto;
+}
+
+.achievements_body_line {
+    background-color: #810f0f;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.achievements_pic {
+    width: 30%;
+    height: 60px;
+    background-color: #6743ee;
+}
+
+.achievements_desc {
+    background-color: #02890f;
+    width: 70%;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #000000;
+}
+
+.achievements_desc_text {
+    background-color: #069769;
+    width: 100%;
+    height: 60px;
+}
+
+.achievements_desc_date {
+    background-color: #3624ae;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+
+
+
+
+
+/* открытие верхней строки верхнего меню */
+@keyframes anim__1 {
+    0% {
+        height: 5vh;
+    }
+
+    100% {
+        height: 30vh;
+        border: 1px solid #37075f;
+    }
+}
+
+
+@keyframes anim__1__1 {
+    0% {
+        height: 30vh;
+        border: 1px solid #37075f;
+    }
+
+    100% {
+        height: 5vh;
+    }
+}
+
+@keyframes anim__2 {
+    0% {
+        height: 0vh;
+    }
+
+    100% {
+        height: 25vh;
+    }
+}
+
+@keyframes anim__2__2 {
+    0% {
+        height: 25vh;
+    }
+
+    100% {
+        height: 0vh;
+    }
+}
+
+@keyframes anim__3 {
+    0% {
+        height: 5vh;
+    }
+
+    100% {
+        height: 30vh;
+    }
+}
+
+@keyframes anim__3__3 {
+    0% {
+        height: 30vh;
+    }
+
+    100% {
+        height: 5vh;
+    }
+}
+
+
+
+
+#anim {
+    display: none;
+}
+
+#anim_2 {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+.l-radio {
+    padding: 6px;
+    border-radius: 50px;
+    display: inline-flex;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin: 8px 0;
+    -webkit-tap-highlight-color: transparent;
+    color: white;
+}
+
+.l-radio:hover, .l-radio:focus-within {
+    background: rgba(159, 159, 159, 0.1);
+}
+
+.l-radio input {
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background: none;
+    border: 0;
+    box-shadow: inset 0 0 0 1px #9F9F9F;
+    box-shadow: inset 0 0 0 1.5px #9F9F9F;
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    transition: box-shadow 150ms cubic-bezier(0.95, 0.15, 0.5, 1.25);
+    pointer-events: none;
+}
+
+.l-radio input:focus {
+    outline: none;
+}
+
+.l-radio input:checked {
+    box-shadow: inset 0 0 0 6px #6743ee;
+}
+
+.l-radio span {
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 20px;
+    padding: 0 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* СТОЛ И КАРТЫ */
+
+#table {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.table__wrapper {
+    height: 100vh;
+    display: flex;
+}
+
+#table__wrapper__left {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#table__wrapper__center {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#table__wrapper__right {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.deck__p {
+    color: #fff;
+}
+
+#deck {
+    width: 150px;
+    height: 100px;
+    max-width: 150px;
+    min-height: 180px;
+    background-image: url(..//img/deck_standart.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 10;
+}
+
+
+
+
+
+
+
+
+
+.bubble {
+    position: absolute;
+    height: 110px;
+    z-index: 90;
+    left: 60%;
+    width: 300px;
+    text-align: center;
+    line-height: 1.4em;
+    margin: 40px auto;
+    background-color: #fff;
+    border: 8px solid #960ccc;
+    border-radius: 30px;
+    font-family: sans-serif;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.bubble:before,
+.bubble:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.speech:before {
+    left: -50px;
+    bottom: 34px;
+    transform: rotate(90deg);
+    border: 25px solid;
+    border-color: #960ccc transparent transparent #960ccc;
+}
+
+.speech:after {
+    transform: rotate(90deg);
+    left: -28px;
+    bottom: 45px;
+    border: 15px solid;
+    border-color: #fff transparent transparent #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#add_move {
+    transform: rotate(0deg);
+    top: 50%;
+    left: 0;
+}
+
+@keyframes add_cards_to_opp {
+    0% {
+        left: +5%;
+        top: -5%;
+    }
+
+    10% {
+        left: +70px;
+        top: -70px;
+        transform: rotate(45deg);
+    }
+
+    /* 20% {
+      height: 5vh;
+    }
+  
+    30% {
+      height: 5vh;
+    }
+  */
+    40% {
+        transform: translate(-40%, -40%);
+    }
+
+    50% {
+        transform: translate(-50%, -50%);
+    }
+
+    /* 
+    60% {
+      height: 5vh;
+    }
+  
+    70% {
+      height: 5vh;
+    }
+  
+    80% {
+      height: 5vh;
+    }
+  
+    90% {
+      height: 5vh;
+    }  */
+
+    100% {
+
+        transform: rotate(27deg);
+        top: 10%;
+        left: 50%;
+
+    }
+}
+
+
+
+
+#trump {
+    transform: rotate(90deg);
+    width: 100px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-image: url(..//img/card_standart_150x100.svg);
+    margin-left: 70px;
+    margin-top: 20px;
+}
+
+#trump_suit {
+    /* background-image: url(..//img/clubs.svg); */
+    display: none;
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* hearts ("червы"),
+  diamonds ("бубны")
+  clubs ("трефы" или "крести")
+   spades ("пики") */
+
+.hearts {
+    background-position-y: 0px;
+}
+
+.diamonds {
+    background-position-y: -150px;
+}
+
+.clubs {
+    background-position-y: -300px;
+}
+
+.spades {
+    background-position-y: -450px;
+}
+
+.six {
+    background-position-x: -100px;
+}
+
+.seven {
+    background-position-x: -200px;
+}
+
+.eight {
+    background-position-x: -300px;
+}
+
+.nine {
+    background-position-x: -400px;
+}
+
+.ten {
+    background-position-x: -500px;
+}
+
+.eleven {
+    background-position-x: -600px;
+}
+
+.twelve {
+    background-position-x: -700px;
+}
+
+.thirteen {
+    background-position-x: -800px;
+}
+
+.fourteen {
+    background-position-x: -0px;
+}
+
+.hint {
+    margin-bottom: 20px;
+    border-radius: 9px;
+    border: 2px solid rgb(149, 0, 255);
+    -webkit-box-shadow: 0px -5px 13px 2px rgba(131, 0, 223, 0.2);
+    -moz-box-shadow: 0px -5px 13px 2px rgba(131, 0, 223, 0.2);
+    box-shadow: 0px -5px 13px 2px rgba(131, 0, 223, 0.2);
+}
+
+
+
+
+
+.hand {
+    height: 170px;
+    align-items: flex-end;
+    position: relative;
+    transform: rotate(5deg);
+}
+
+/* рука игрока*/
+
+#hand__player {
+    display: flex;
+    width: 60px;
+    position: absolute;
+    align-items: center;
+}
+
+#player__interface {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 200px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#player__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 70px;
+}
+
+/* фотка игрока*/
+
+#player__photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 14px;
+    background-size: cover;
+    border: 7px solid rgba(255, 0, 0, 1);
+    position: relative;
+    top: 5px;
+    z-index: 8000;
+}
+
+
+/* имя игрока*/
+#player__name__wrap {
+    width: 270px;
+    height: 40px;
+    background-color: rgba(255, 0, 0, 1);
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    z-index: 8000;
+    margin-bottom: 70px;
+}
+
+#player__name {
+    color: #000000;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: rgba(196, 196, 196, 1);
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+
+.my_card:first-child {
+    transform: rotate(325deg);
+}
+
+.my_card:last-child {
+    transform: rotate(27deg);
+}
+
+.my_card:nth-child(2) {
+    transform: rotate(338deg);
+}
+
+.my_card:nth-child(3) {
+    transform: rotate(351deg);
+}
+
+.my_card:nth-child(4) {
+    transform: rotate(3deg);
+}
+
+.my_card:nth-child(5) {
+    transform: rotate(15deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* кнопки пасс, бито, беру*/
+
+.button__interface {
+    width: 100px;
+    height: 30px;
+    background-color: brown;
+    text-align: center;
+}
+
+
+
+#bito {
+    width: 190px;
+    height: 250px;
+    background-image: url(..//img/bito_standard.svg);
+}
+
+
+/*мои карты */
+.my_card {
+    background-image: url(..//img/card_standart_150x100.svg);
+    width: 100px;
+    max-width: 100px;
+    height: 150px;
+    transform-origin: 50% 200% 0;
+    position: absolute;
+}
+
+/*карты кинутые на стол */
+.card_table {
+    background-image: url(..//img/card_standart_150x100.svg);
+    width: 100px;
+    max-width: 100px;
+    height: 150px;
+}
+
+
+
+
+
+
+
+
+
+/* окно (карточка) оппонента */
+.opponent_window {
+    width: 300px;
+    height: 225px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 80;
+}
+
+#opponent__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* фотка игрока*/
+
+#opponent__photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 14px;
+    background-image: url(..//img/Rectangle\ 1248.png);
+    background-size: cover;
+    border: 7px solid rgb(88, 203, 88);
+    position: relative;
+    top: -5px;
+    z-index: 10;
+}
+
+#opponent__name__wrap {
+    width: 270px;
+    height: 40px;
+    background-color: rgb(88, 203, 88);
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+/* имя оппонента*/
+#opponent__name {
+    color: #000000;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: rgba(196, 196, 196, 1);
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+/* вся нижняя часть карточки оппонента */
+
+/* рука противника*/
+.opponent_hand {
+    height: 55px;
+    transform: rotate(185deg);
+    display: flex;
+    width: 60px;
+    position: relative;
+}
+
+/* карты противника*/
+.shirt {
+    background-image: url(..//img/shirt_standart.svg);
+    width: 100px;
+    max-width: 100px;
+    height: 150px;
+    transform-origin: 50% 200% 0;
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+.shirt:first-child {
+    transform: rotate(325deg);
+}
+
+.shirt:last-child {
+    transform: rotate(27deg);
+}
+
+.shirt:nth-child(2) {
+    transform: rotate(338deg);
+}
+
+.shirt:nth-child(3) {
+    transform: rotate(351deg);
+}
+
+.shirt:nth-child(4) {
+    transform: rotate(3deg);
+}
+
+.shirt:nth-child(5) {
+    transform: rotate(15deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#game_zone {
+    width: 75%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 90px;
+    background-image: url(..//img/table_standard.png);
+    background-size: cover;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.12);
+}
+
+.line {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.cell {
+    width: 50%;
+    height: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell div:nth-child(1) {
+    position: absolute;
+}
+
+.cell div:nth-child(2) {
+    position: relative;
+    z-index: 10;
+    top: 10px;
+    left: 15px;
+}
+
+#cell_one div:nth-child(2) {
+    transform: rotate(5deg);
+}
+
+#cell_two div:nth-child(2) {
+    transform: rotate(2deg);
+}
+
+#cell_three div:nth-child(2) {
+    transform: rotate(10deg);
+}
+
+#cell_four div:nth-child(2) {
+    transform: rotate(12deg);
+}
+
+#cell_five div:nth-child(2) {
+    transform: rotate(7deg);
+}
+
+#cell_six div:nth-child(2) {
+    transform: rotate(2deg);
+}
+
+
+#btn_pass_wrap {
+    position: relative;
+    left: 300px;
+    bottom: 60px;
+}
+
+.button_game {
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid rgb(221, 14, 221);
+    background: rgba(255, 255, 255, 0.192);
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+}
+
+.button_game:hover {
+    background: rgba(255, 255, 255, 0.49);
+}
+
+
+
+@-webkit-keyframes anim__1 {
+    0% {
+        height: 5vh;
+    }
+
+    100% {
+        height: 30vh;
+        border: 1px solid #37075f;
+    }
+}
+
+
+@-webkit-keyframes anim__1__1 {
+    0% {
+        height: 30vh;
+        border: 1px solid #37075f;
+    }
+
+    100% {
+        height: 5vh;
+    }
+}
+
+@-webkit-keyframes anim__2 {
+    0% {
+        height: 0vh;
+    }
+
+    100% {
+        height: 25vh;
+    }
+}
+
+@-webkit-keyframes anim__2__2 {
+    0% {
+        height: 25vh;
+    }
+
+    100% {
+        height: 0vh;
+    }
+}
+
+@-webkit-keyframes anim__3 {
+    0% {
+        height: 5vh;
+    }
+
+    100% {
+        height: 30vh;
+    }
+}
+
+@-webkit-keyframes anim__3__3 {
+    0% {
+        height: 30vh;
+    }
+
+    100% {
+        height: 5vh;
+    }
+}
+
+
+
+@-webkit-keyframes flight_card_to_computer {
+    to {
+        transform: translate3d(55vw, -500px, 0px);
+        opacity: 0.5;
+    }
+}
+
+@keyframes flight_card_to_computer {
+    to {
+        transform: translate3d(55vw, -500px, 0px);
+        opacity: 0.5;
+    }
+}
+
+@-webkit-keyframes flight_card_to_player {
+    to {
+        transform: translate3d(55vw, 500px, 0px);
+        opacity: 0;
+    }
+}
+
+@keyframes flight_card_to_player {
+    to {
+        transform: translate3d(55vw, 500px, 0px);
+        opacity: 0;
+    }
+}
+
+
+
+/* ПОЛЕТ КАРТЫ К КОМПУ */
+.to_comp {
+    animation-duration: 1s;
+    animation-name: flight_card_to_computer;
+}
+
+
+
+/* ПОЛЕТ КАРТЫ К ИГРОКУ */
+.to_player {
+    animation-duration: 1s;
+    animation-name: flight_card_to_player;
+}
+
+.a_it_c_1 {
+    animation-iteration-count: 1;
+}
+
+.a_it_c_2 {
+    animation-iteration-count: 2;
+}
+
+.a_it_c_3 {
+    animation-iteration-count: 3;
+}
+
+.anim_card {
+    background-image: url(..//img/shirt_standart.svg);
+    width: 100px;
+    max-width: 100px;
+    height: 150px;
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+#result_wrap {
+    /* прозрачный блок с конфети*/
+    width: 70%;
+    height: 45vh;
+    transform: translate(-50%, -55%);
+    left: 50%;
+    top: 40%;
+    position: fixed;
+    background-color: rgba(4, 20, 20, 0.092);
+    background-color: transparent;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#result {
+    /* блок результатов */
+    box-shadow: 0px 0px 18px 6px rgb(0 0 0 / 50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    z-index: 100;
+    width: 70%;
+    height: 70vh;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -40%);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.result_title {
+    height: 7%;
+    align-items: center;
+    text-align: center;
+    font-size: 35px;
+}
+
+#result_line {
+    height: 7%;
+    align-items: center;
+    text-align: center;
+
+}
+
+#result_btn {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 7%;
+
+}
+
+.ddcdcdcd {
+    animation-duration: 2s;
+    animation-name: player_takes_the_cards;
+}
+
+/* computer_takes_the_cards¶
+    player_takes_the_cards */
+
+@keyframes player_takes_the_cards {
+    100% {
+        top: calc(50vh - 150px);
+        left: (50vw - 100px);
+    }
+}
+
+@keyframes computer_takes_the_cards {
+    to {
+        transform: translate3d(55vw, 50vh, 0px);
+        opacity: 0;
+    }
+}

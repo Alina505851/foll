@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+section {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(..//img/general_background_6.png);
+    background-size: cover;
+}
+
+
+body {
+    overflow: hidden;
+}
+
+
+/* Обертка формф входа */
+#entrance__wrap {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    width: 60vw;
+    height: 60vh;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.192);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(43, 43, 43, 0.568);
+}
+
+#entrance__wrapper {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    width: 60vw;
+    height: 60vh;
+}
+
+@keyframes block_retracted_up {
+    0% {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    10% {
+        top: 55%;
+        transform: translate(-50%, -40%);
+    }
+
+    100% {
+        transform: translate(-50%, -250%);
+    }
+}
+
+/* анимация увеличения размера обертки блока входа */
+@keyframes changing_the_size_wrap {
+    0% {
+        width: 60vw;
+    }
+
+    100% {
+        width: 70vw;
+    }
+}
+
+/* Форма входа */
+#entrance {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    width: 50vw;
+    height: 50vh;
+    background: rgba(191, 191, 191, 0.2);
+    border-radius: 36px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* анимация увеличения размера блока входа */
+@keyframes changing_the_size {
+    0% {
+        width: 50vw;
+    }
+
+    100% {
+        width: 60vw;
+    }
+}
+
+/* Обертка для столбцов */
+.entrance__btn__wrap__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* Скрытый столбец */
+#retractable {
+    display: none;
+    flex-direction: column;
+}
+
+/* 4 белые кнопки входа */
+.entrance__btn {
+    border-radius: 23px;
+    background: rgba(255, 255, 255, 0.192);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(43, 43, 43, 0.568);
+    width: 20vw;
+    height: 40%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Стилизация заголовка блоков */
+.entrance__btn__h2 {
+    /* Добавить шрифты */
+    /* font-size: calc(min 20px + разница с самым большим 15 * (100vh / 1280)); */
+    font-size: calc(15px + 10 * (100vw / 1280));
+    font-family: 'Rubik', sans-serif;
+    /* font-size: 10px; */
+}
+
+.entrance__btn__p {
+    /* font-size: calc(min 20px + разница с самым большим 15 * (100vh / 1280)); */
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Стилизация под заголовка блоков */
+.entrance__btn__p {
+    color: rgb(39, 39, 39);
+}
+
+.entrance__btn:hover {
+    background-color: rgba(88, 88, 88, 0.219);
+}
+
+
+
+
+
+
+
+
+
+
+/* 1 открывающийся столбец */
+.entrance__drop {
+    width: 20vw;
+    height: 90%;
+    border-radius: 23px;
+}
+
+
+
+
+
+
+/* Открывшийся блок с регистрацией */
+#registration__block {
+    background-color: rgba(250, 235, 215, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#registration__form, #enter__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Текс внутри формы регистрации */
+.p__form {
+    font-size: calc(15px + 10 * (100vw / 1280));
+}
+
+/* Стилизация инпутов */
+.entry__input {
+    width: calc(100px + 60 * (100vw / 1280));
+    height: 30px;
+    padding: 0.3em 20px 0.3em 40px;
+    border-radius: 25px;
+}
+
+
+/* Стилизация кнопок */
+.custom-btn {
+    width: 170px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    outline: none;
+    background: rgb(165, 35, 48);
+}
+
+/* ссылка внутри кнопки */
+.button__a {
+    font-size: calc(13px + 1 * (100vw / 1280));
+}
+
+.btn-2:before {
+    height: 0%;
+    width: 2px;
+}
+
+.btn-2:hover {
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+        -4px -4px 6px 0 rgba(116, 125, 136, .5),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
+        inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
+
+
+/* Открывшийся блок с ВХОДОМ */
+#enter__block {
+    background-color: rgba(250, 235, 215, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.enter__form__row {
+    color: rgb(0, 0, 0);
+    font-size: calc(15px + 1 * (100vw / 1280));
+    /* font-size: calc(min 20px + разница с самым большим 15 * (100vh / 1280)); */
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* чекбокс запомнить */
+#remember {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+/* стиль забыли пароль */
+.enter__form__a {
+    color: rgb(110, 15, 15);
+    margin-left: 40px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Блок ВКОНТАКТЕ */
+#vk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Значек вконтакте */
+#vk img {
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+}
+
+/* Открывшийся блок с ГОСТЕВЫМ входом */
+#guest__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.p__guest {
+    text-align: justify;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#guest__block__limiter {
+    width: 15vw;
+}
+
+
+
+.error__box {
+    color: rgb(192, 20, 20);
+    font-size: 20px;
+    margin-top: 8px;
+}
+
+
+
+
+

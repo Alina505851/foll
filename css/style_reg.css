@@ -1,0 +1,520 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+section {
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-image: url(..//img/entrance.png);
+}
+
+/* Обертка формф входа */
+#entrance__wrap {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    width: 60vw;
+    height: 60vh;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.192);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(43, 43, 43, 0.568);
+}
+
+#entrance__wrapper {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    width: 60vw;
+    height: 60vh;
+}
+
+@keyframes block_retracted_up {
+    0% {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    10% {
+        top: 55%;
+        transform: translate(-50%, -40%);
+    }
+
+    100% {
+        transform: translate(-50%, -250%);
+    }
+}
+
+/* анимация увеличения размера обертки блока входа */
+@keyframes changing_the_size_wrap {
+    0% {
+        width: 60vw;
+    }
+
+    100% {
+        width: 70vw;
+    }
+}
+
+/* Форма входа */
+#entrance {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    width: 50vw;
+    height: 50vh;
+    background: rgba(191, 191, 191, 0.2);
+    border-radius: 36px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* анимация увеличения размера блока входа */
+@keyframes changing_the_size {
+    0% {
+        width: 50vw;
+    }
+
+    100% {
+        width: 60vw;
+    }
+}
+
+/* Обертка для столбцов */
+.entrance__btn__wrap__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* Скрытый столбец */
+#retractable {
+    display: none;
+    flex-direction: column;
+}
+
+/* 4 белые кнопки входа */
+.entrance__btn {
+    border-radius: 23px;
+    background: rgba(255, 255, 255, 0.192);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(43, 43, 43, 0.568);
+    width: 20vw;
+    height: 40%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Стилизация заголовка блоков */
+.entrance__btn__h2 {
+    font-size: 25px;
+    font-family: 'Rubik', sans-serif;
+}
+
+a {
+    font-size: 25px;
+    font-family: 'Rubik', sans-serif;
+    text-decoration: none;
+    color: #000;
+}
+
+.entrance__btn__p {
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Стилизация под заголовка блоков */
+.entrance__btn__p {
+    color: rgb(39, 39, 39);
+}
+
+.entrance__btn:hover {
+    background-color: rgba(88, 88, 88, 0.219);
+}
+
+/* 1 открывающийся столбец */
+.entrance__drop {
+    width: 20vw;
+    height: 90%;
+    border-radius: 23px;
+}
+
+/* Открывшийся блок с регистрацией */
+#registration__block {
+    background-color: rgba(250, 235, 215, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#registration__form, #enter__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Текс внутри формы регистрации */
+.p__form {
+    font-size: 25px;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Стилизация инпутов */
+.entry__input {
+    width: calc(100px + 60 * (100vw / 1280));
+    height: 35px;
+    padding: 0.3em 20px 0.3em 20px;
+    border-radius: 15px;
+    font-size: 17px;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Стилизация кнопок */
+.custom-btn {
+    width: 170px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    outline: none;
+    background: rgb(165, 35, 48);
+}
+
+.btn-2:before {
+    height: 0%;
+    width: 2px;
+}
+
+.btn-2:hover {
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+        -4px -4px 6px 0 rgba(116, 125, 136, .5),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
+        inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
+
+/* Открывшийся блок с ВХОДОМ */
+#enter__block {
+    background-color: rgba(250, 235, 215, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.enter__form__row {
+    color: rgb(0, 0, 0);
+    font-size: calc(15px + 1 * (100vw / 1280));
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Блок ВКОНТАКТЕ */
+#vk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Значек вконтакте */
+#vk img {
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+}
+
+/* Открывшийся блок с ГОСТЕВЫМ входом */
+#guest__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+}
+
+.p__guest {
+    text-align: justify;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#guest__block__limiter {
+    width: 15vw;
+}
+
+.error_box {
+    color: rgb(192, 20, 20);
+    font-size: 20px;
+    margin-top: 8px;
+}
+
+
+
+
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .p__guest {
+        text-align: center;
+    }
+
+    #guest__block__limiter {
+        height: 40vh;
+    }
+
+    .entrance__drop {
+        width: 25vw;
+        height: 90%;
+    }
+
+    #guest__block__limiter {
+        width: 20vw;
+        height: 35vh;
+    }
+
+    .p__guest {
+        height: 90%;
+        text-align: justify;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    /* анимация увеличения размера обертки блока входа */
+    @keyframes changing_the_size_wrap {
+        0% {
+            width: 60vw;
+        }
+
+        100% {
+            width: 80vw;
+        }
+    }
+
+    /* анимация увеличения размера блока входа */
+    @keyframes changing_the_size {
+        0% {
+            width: 50vw;
+        }
+
+        100% {
+            width: 70vw;
+        }
+    }
+
+    /* уменьшение красной кнопки */
+    .custom-btn {
+        width: 150px;
+        padding: 10px;
+    }
+
+    #guest__block__limiter {
+        height: 40vh;
+    }
+
+    .entrance__drop {
+        width: 25vw;
+        height: 90%;
+    }
+
+    #guest__block__limiter {
+        width: 25vw;
+        height: 35vh;
+    }
+
+    .p__guest {
+        height: 90%;
+        text-align: center;
+    }
+
+
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+    /* Обертка формф входа */
+    #entrance__wrap {
+        width: 70vw;
+    }
+
+    /* анимация увеличения размера обертки блока входа */
+    @keyframes changing_the_size_wrap {
+        0% {
+            width: 70vw;
+        }
+
+        100% {
+            width: 100vw;
+        }
+    }
+
+    /* Форма входа */
+    #entrance {
+        width: 60vw;
+    }
+
+    /* анимация увеличения размера блока входа */
+    @keyframes changing_the_size {
+        0% {
+            width: 60vw;
+        }
+
+        100% {
+            width: 90vw;
+        }
+    }
+
+    .entrance__btn {
+        width: 25vw;
+        overflow-wrap: break-word;
+    }
+
+    .entrance__drop {
+        width: 25vw;
+        height: 90%;
+    }
+
+    .custom-btn {
+        width: 140px;
+        padding: 5px;
+    }
+
+    #guest__block__limiter {
+        width: 25vw;
+        height: 35vh;
+    }
+
+    .p__guest {
+        height: 90%;
+        text-align: center;
+    }
+
+    /* Текс внутри формы регистрации */
+    .p__form {
+        font-size: calc(15px + (10 + 10 * 0.7) * ((100vw - 320px) / 1280));
+    }
+
+    /* Адаптив ширины инпутов */
+    .entry__input {
+        width: calc(130px + (60 + 60 * 0.7) * ((100vw - 320px) / 1280));
+    }
+
+    #vk img {
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+    }
+
+
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+    /* #guest{
+    transform: rotate(90deg);
+  } */
+
+    #entrance__wrap {
+        width: 80vw;
+        height: 60vh;
+    }
+
+    /* анимация увеличения размера обертки блока входа */
+    @keyframes changing_the_size_wrap {
+        0% {
+            width: 80vw;
+        }
+
+        100% {
+            width: 90vw;
+        }
+    }
+
+    /* Форма входа */
+    #entrance {
+        width: 70vw;
+        height: 50vh;
+    }
+
+    /* анимация увеличения размера блока входа */
+    @keyframes changing_the_size {
+        0% {
+            width: 70vw;
+        }
+
+        100% {
+            width: 80vw;
+        }
+    }
+
+    .entrance__btn {
+        width: 30vw;
+        height: 40%;
+    }
+
+    .custom-btn {
+        width: 110px;
+        padding: 5px;
+    }
+
+
+    #vk img {
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+    }
+
+
+
+    /* Стилизация заголовка блоков */
+    .entrance__btn__h2 {
+
+        /* font-size: calc(min 20px + разница с самым большим 15 * (100vh / 1280)); */
+        /* font-size: calc(15px + 10 * (100vw / 1280)); */
+
+        font-size: 15px;
+    }
+
+    .entrance__btn__p {
+        /* font-size: calc(min 20px + разница с самым большим 15 * (100vh / 1280)); */
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 320px) {
+
+    .entrance__btn__h2 {
+        font-size: 10px;
+    }
+
+}
